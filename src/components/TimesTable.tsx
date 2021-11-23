@@ -16,6 +16,7 @@ const TimesTable: React.FunctionComponent<TimesTableProps> = ({ times }) => {
         else
             return (<td key={uniqueId()}><TimeDisplay time={time}/></td>)
     }
+    
     const timeRows = () => {
         const rows: JSX.Element[] = []
 

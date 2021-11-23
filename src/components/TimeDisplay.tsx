@@ -13,7 +13,6 @@ interface StringTime {
 
 const zeroPad = (value: number, digits: number): string => {
     const string_val = value.toString()
-    
     let padded = string_val
     while (padded.length < digits) {
         padded = "0" + padded

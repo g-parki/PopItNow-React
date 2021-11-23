@@ -9,8 +9,8 @@ interface BubbleTableProps {
     requestGameStart: () => void,
 }
 
-const rows = 5;
-const columns = 6;
+const ROWS = 5;
+const COLUMNS = 6;
 
 const create_initial_grid = (row: number, col: number): boolean[][] => {
     let _inner: boolean[] = []
@@ -30,9 +30,9 @@ const copy_grid = (grid: boolean[][]): boolean[][] => {
     return _grid
 }
 
-const initial_grid: boolean[][] = create_initial_grid(rows, columns)
+const initial_grid: boolean[][] = create_initial_grid(ROWS, COLUMNS)
 
-const BubbleTable: React.FunctionComponent<BubbleTableProps> = ({requestGameEnd, requestGameStart}) => {
+const BubbleTable: React.FunctionComponent<BubbleTableProps> = ({ requestGameEnd, requestGameStart }) => {
 
     const [Grid, setGrid] = useState<boolean[][]>(copy_grid(initial_grid))
     const gaming = React.useContext(TimerContext)
@@ -61,7 +61,7 @@ const BubbleTable: React.FunctionComponent<BubbleTableProps> = ({requestGameEnd,
             { Grid.map((row, i) => (
                 <tr key={uniqueId()}>{row.map((val, j) => (
                     <td key={uniqueId()}>
-                        <Bubble value={val} row={i} col={j} onclick={doToggle}/>
+                        <Bubble value={val} row={i} col={j} onclick={doToggle} />
                     </td>
                 ))}</tr>
             ))}

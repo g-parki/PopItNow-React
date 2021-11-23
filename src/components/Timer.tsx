@@ -8,10 +8,10 @@ interface TimerProps {
     sendFinal: (arg: Time) => void,
 }
  
-const Timer: React.FunctionComponent<TimerProps> = ({initialTime, sendFinal}) => {
+const Timer: React.FunctionComponent<TimerProps> = ({ initialTime, sendFinal }) => {
 
-    const [currentTime, setCurrentTime] = useState<Time>({minutes: 0, seconds: 0, milliseconds: 0})
-    let most_recent_time = useRef({minutes: 0, seconds: 0, milliseconds:0 })
+    const [currentTime, setCurrentTime] = useState<Time>({ minutes: 0, seconds: 0, milliseconds: 0 })
+    let most_recent_time = useRef({ minutes: 0, seconds: 0, milliseconds: 0 })
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -27,7 +27,6 @@ const Timer: React.FunctionComponent<TimerProps> = ({initialTime, sendFinal}) =>
             }
             setCurrentTime(time)
             most_recent_time.current = time
-
         }, 10);
         return () => {
             clearInterval(timer)
