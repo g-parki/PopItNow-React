@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c40fc9e19ae9e5efb78af8ecac60cc62",
+    "revision": "cab5a0b4f88f47c257e5959a38472c01",
     "url": "/PopItNow-React/index.html"
   },
   {
-    "revision": "46645955c40ee1140804",
-    "url": "/PopItNow-React/static/css/main.fd316a6d.chunk.css"
+    "revision": "73c2d3cdcf62f1426f79",
+    "url": "/PopItNow-React/static/css/main.845ab59c.chunk.css"
   },
   {
     "revision": "d675dc1368560807ae79",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/PopItNow-React/static/js/2.f8af3742.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "46645955c40ee1140804",
-    "url": "/PopItNow-React/static/js/main.3ed86b0e.chunk.js"
+    "revision": "73c2d3cdcf62f1426f79",
+    "url": "/PopItNow-React/static/js/main.5e471b3c.chunk.js"
   },
   {
     "revision": "5eee4fce989120217b10",

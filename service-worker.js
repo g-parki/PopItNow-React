@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/PopItNow-React/precache-manifest.f2fac71140ed0f54ec862069dbe701e9.js"
+  "/PopItNow-React/precache-manifest.b008e18479a4922e2e6da91a61bfb687.js"
 );
 
 self.addEventListener('message', (event) => {
