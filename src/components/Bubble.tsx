@@ -16,11 +16,6 @@ const pressed_link: string = "https://upload.wikimedia.org/wikipedia/commons/9/9
 const unpressed_link: string = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg"
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({value, row, col, onclick}) => {
-    // const audio_link = process.env.PUBLIC_URL + '/sfx-pop3.mp3'
-
-    // const play_pop = () => {
-    //     new Audio(audio_link).play()
-    // }
 
     const interaction_event = (): InteractionEvents => {
         if ('ontouchstart' in window)
@@ -30,7 +25,6 @@ const Bubble: React.FunctionComponent<BubbleProps> = ({value, row, col, onclick}
 
     const handleClick = () => {
         onclick(row, col)
-        //ßplay_pop()
     }
 
     const events = interaction_event()
