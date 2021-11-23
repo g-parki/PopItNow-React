@@ -21,6 +21,17 @@ code {
   padding-top: 300;
 }
 
+.nav {
+  position: fixed;
+  bottom: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  width: 30px;
+}
+
 .center-text {
   text-align: center;
 }
@@ -38,5 +49,9 @@ code {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 150px;
+  font-size: 130px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 10px;
 }
