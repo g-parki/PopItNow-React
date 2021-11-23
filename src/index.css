@@ -18,7 +18,6 @@ code {
 
 .centered {
   margin: 0 auto;
-  padding-top: 300;
 }
 
 .nav {
@@ -26,6 +25,9 @@ code {
   bottom: 0;
   padding-left: 10px;
   padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,1));
 }
 
 .logo {
@@ -45,13 +47,21 @@ code {
   color:rgb(122, 175, 15);
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+.title-container {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.title-top-row {
   font-size: 130px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 20px;
-  padding-left: 10px;
+  text-align: center;
+  clear: both;
+}
+
+.title-bottom-row {
+  font-size: 100px;
+  text-align: center;
+  margin-top: -20px;
 }
