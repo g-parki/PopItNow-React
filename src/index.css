@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -20,14 +20,32 @@ code {
   margin: 0 auto;
 }
 
-.nav {
+.no-margin {
+  margin: 0;
+}
+
+.nav-bottom {
   position: fixed;
+  height: 33px;
   bottom: 0;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  padding-top: 0px;
   width: 100%;
-  background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,1));
+  text-align: center;
+}
+
+.nav-member {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 33px;
+  display: table-cell;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .logo {
@@ -38,13 +56,21 @@ code {
   text-align: center;
 }
 
-.bold {
+.bold-larger {
   font-weight: bold;
   font-size: larger;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .green {
-  color:rgb(122, 175, 15);
+  color: rgb(122, 175, 15);
+}
+
+.red {
+  color: firebrick;
 }
 
 .title-container {

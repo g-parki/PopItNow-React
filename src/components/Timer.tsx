@@ -10,31 +10,39 @@ interface TimerProps {
  
 const Timer: React.FunctionComponent<TimerProps> = ({ initialTime, sendFinal }) => {
 
-    const [currentTime, setCurrentTime] = useState<Time>({ minutes: 0, seconds: 0, milliseconds: 0 })
-    let most_recent_time = useRef({ minutes: 0, seconds: 0, milliseconds: 0 })
+    const [currentTime, setCurrentTime] = useState<Time>({ minutes: 0, seconds: 0, milliseconds: 0, duration: 0 })
+    let most_recent_time = useRef({ minutes: 0, seconds: 0, milliseconds: 0, duration: 0 })
 
     useEffect(() => {
         const timer = setInterval(() => {
-            let duration = new Date().getTime() - initialTime
-            const minutes = Math.floor(duration/1000/60)
-            duration -= minutes * 1000 * 60
-            const seconds = Math.floor(duration/1000)
-            duration -= seconds * 1000
-            const time = { 
-                minutes: minutes,
-                seconds: seconds,
-                milliseconds: duration,
+            const time: Time = { 
+                minutes: 0,
+                seconds: 0,
+                milliseconds: 0,
+                duration: 0,
             }
+
+            let _duration = new Date().getTime() - initialTime
+            time.duration = _duration.valueOf()
+
+            time.minutes = Math.floor(_duration/(1000*60))
+            _duration = _duration % (1000*60)
+
+            time.seconds = Math.floor(_duration/1000)
+            _duration = _duration % 1000
+            
+            time.milliseconds = _duration
+            
             setCurrentTime(time)
             most_recent_time.current = time
-        }, 10);
+        }, 5);
         return () => {
             clearInterval(timer)
             sendFinal(most_recent_time.current)
         };
       }, [initialTime, sendFinal]);
 
-    return (<span className="bold"><TimeDisplay time={currentTime}/></span>);
+    return (<span className="bold-larger"><TimeDisplay time={currentTime}/></span>);
 }
  
 export default Timer;
