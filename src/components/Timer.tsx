@@ -34,7 +34,7 @@ const Timer: React.FunctionComponent<TimerProps> = ({ initialTime, sendFinal }) 
         };
       }, [initialTime, sendFinal]);
 
-    return (<span className="bold"><TimeDisplay time={currentTime}/></span>);
+    return (<span className="bold-larger"><TimeDisplay time={currentTime}/></span>);
 }
  
 export default Timer;

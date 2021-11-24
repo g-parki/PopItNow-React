@@ -20,14 +20,32 @@ code {
   margin: 0 auto;
 }
 
-.nav {
+.nav-top {
   position: fixed;
+  height: 33px;
   bottom: 0;
   padding-left: 10px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 0px;
   width: 100%;
   background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,1));
+  text-align: center;
+}
+
+.nav-member {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.best-time {
+  width: 500px;
+  text-align: left;
+  margin-top: -9px;
 }
 
 .logo {
@@ -38,9 +56,13 @@ code {
   text-align: center;
 }
 
-.bold {
+.bold-larger {
   font-weight: bold;
   font-size: larger;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .green {
@@ -64,4 +86,14 @@ code {
   font-size: 100px;
   text-align: center;
   margin-top: -20px;
+}
+
+@keyframes newbest {
+  from {color:rgb(122, 175, 15)}
+  to {color: "black"}
+}
+
+.new-best {
+  animation-name: newbest;
+  animation-duration: 2s;
 }

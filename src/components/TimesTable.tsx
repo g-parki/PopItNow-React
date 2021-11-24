@@ -22,7 +22,7 @@ const TimesTable: React.FunctionComponent<TimesTableProps> = ({ times }) => {
 
         for (const [index, time] of times.entries()) {
             if (index === 0 && !gaming)
-                rows.push(timeRow(time, "bold green"))
+                rows.push(timeRow(time, "bold-larger green"))
             else
                 rows.push(timeRow(time))
         }

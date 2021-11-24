@@ -3,6 +3,8 @@ import TimesTable from './TimesTable';
 import { useState } from 'react';
 import Timer from './Timer';
 import BubbleTable from './BubbleTable';
+import BottomNav from './BottomNav';
+import BestTime from './BestTime';
 
 interface TimesManagerProps {
     
@@ -46,6 +48,7 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
                 {renderTimer()}
                 <TimesTable times={times}/>
             </div> 
+            {times.length ? <BottomNav best_time={<BestTime times={times}/>}/> : <BottomNav />}
         </TimerContext.Provider>
     );
 }

@@ -9,8 +9,8 @@ interface BubbleTableProps {
     requestGameStart: () => void,
 }
 
-const ROWS = 5;
-const COLUMNS = 6;
+const ROWS = 2;
+const COLUMNS = 2;
 
 const create_initial_grid = (row: number, col: number): boolean[][] => {
     let _inner: boolean[] = []

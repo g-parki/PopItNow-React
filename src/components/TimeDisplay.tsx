@@ -28,7 +28,7 @@ const TimeDisplay: React.FunctionComponent<TimeDisplayProps> = ({ time }) => {
         milliseconds: zeroPad(time.milliseconds, 3),
     }
 
-    return (<p className="time">{string_time.minutes}:{string_time.seconds}.{string_time.milliseconds}</p>);
+    return (<text className="time">{string_time.minutes}:{string_time.seconds}.{string_time.milliseconds}</text>);
 }
 
 export default TimeDisplay;
