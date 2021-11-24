@@ -94,17 +94,3 @@ code {
   text-align: center;
   margin-top: -20px;
 }
-
-@keyframes newbest {
-  from {
-    color: rgb(122, 175, 15);
-  }
-  to {
-    color: "black";
-  }
-}
-
-.new-best {
-  animation-name: newbest;
-  animation-duration: 2s;
-}

@@ -1,10 +1,8 @@
 import * as React from 'react';
-import TimesTable from './TimesTable';
 import { useState } from 'react';
 import Timer from './Timer';
 import BubbleTable from './BubbleTable';
 import BottomNav from './BottomNav';
-import BestTime from './BestTime';
 import TimeDisplay from './TimeDisplay';
 
 interface TimesManagerProps {
@@ -64,7 +62,7 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
             <div className= "center-text">
                 {renderTimer()}
             </div> 
-            {bestTime ? <BottomNav best_time={<BestTime best_time={bestTime}/>}/> : <BottomNav />}
+            {bestTime ? <BottomNav best_time={bestTime}/> : <BottomNav />}
         </TimerContext.Provider>
     );
 }
