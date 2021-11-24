@@ -20,6 +20,10 @@ code {
   margin: 0 auto;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .nav-top {
   position: fixed;
   height: 33px;
@@ -36,19 +40,18 @@ code {
 }
 
 .nav-member {
-  float: left;
   padding-left: 10px;
   padding-right: 10px;
-  height: 100%;
+  margin-bottom: 10px;
+  top: 0;
+  height: 33px;
   display: table-cell;
   vertical-align: middle;
   align-content: center;
 }
 
 .best-time {
-  width: 500px;
   text-align: left;
-  margin-top: -9px;
 }
 
 .logo {
