@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PopItNow-React/static/css/main.8789b969.chunk.css",
+    "main.css": "/PopItNow-React/static/css/main.895682ab.chunk.css",
     "main.js": "/PopItNow-React/static/js/main.f1284501.chunk.js",
     "main.js.map": "/PopItNow-React/static/js/main.f1284501.chunk.js.map",
     "runtime-main.js": "/PopItNow-React/static/js/runtime-main.35c5bfff.js",
@@ -8,15 +8,15 @@
     "static/js/2.e8efa66a.chunk.js": "/PopItNow-React/static/js/2.e8efa66a.chunk.js",
     "static/js/2.e8efa66a.chunk.js.map": "/PopItNow-React/static/js/2.e8efa66a.chunk.js.map",
     "index.html": "/PopItNow-React/index.html",
-    "precache-manifest.a32f67a8e01fbf739195b82f02092d5b.js": "/PopItNow-React/precache-manifest.a32f67a8e01fbf739195b82f02092d5b.js",
+    "precache-manifest.da802467eb84588aeb5368890afda060.js": "/PopItNow-React/precache-manifest.da802467eb84588aeb5368890afda060.js",
     "service-worker.js": "/PopItNow-React/service-worker.js",
-    "static/css/main.8789b969.chunk.css.map": "/PopItNow-React/static/css/main.8789b969.chunk.css.map",
+    "static/css/main.895682ab.chunk.css.map": "/PopItNow-React/static/css/main.895682ab.chunk.css.map",
     "static/js/2.e8efa66a.chunk.js.LICENSE.txt": "/PopItNow-React/static/js/2.e8efa66a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.35c5bfff.js",
     "static/js/2.e8efa66a.chunk.js",
-    "static/css/main.8789b969.chunk.css",
+    "static/css/main.895682ab.chunk.css",
     "static/js/main.f1284501.chunk.js"
   ]
 }
