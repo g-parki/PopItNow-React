@@ -22,6 +22,7 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
 
     const [times, setTimes] = useState<Time[]>([])
     const [bestTime, setBestTime] = useState<Time>()
+    const [attempts, setAttempts] = useState(0)
     const [gaming, setGaming] = useState(false)
   
     const startGame = () => {
@@ -30,6 +31,7 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
 
     const endGame = () => {
         setGaming(false)
+        setAttempts(attempts + 1)
     }
 
     const addTime = (time: Time) => {
@@ -62,7 +64,7 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
             <div className= "center-text">
                 {renderTimer()}
             </div> 
-            {bestTime ? <BottomNav best_time={bestTime}/> : <BottomNav />}
+            <BottomNav attempts={attempts} best_time={bestTime}/>
         </TimerContext.Provider>
     );
 }

@@ -24,12 +24,12 @@ code {
   margin: 0;
 }
 
-.nav-top {
+.nav-bottom {
   position: fixed;
   height: 33px;
   bottom: 0;
-  padding-left: 10px;
-  padding-bottom: 10px;
+  margin-left: 20px;
+  padding-bottom: 15px;
   padding-top: 0px;
   width: 100%;
   background-image: linear-gradient(
@@ -42,15 +42,13 @@ code {
 .nav-member {
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 10px;
-  top: 0;
   height: 33px;
   display: table-cell;
   vertical-align: middle;
   align-content: center;
 }
 
-.best-time {
+.align-left {
   text-align: left;
 }
 
