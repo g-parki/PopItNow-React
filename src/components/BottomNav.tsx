@@ -15,7 +15,7 @@ const BottomNav: React.FunctionComponent<BottomNavProps> = ({ best_time }) => {
                 <SourceCodeLink />
             </div>
             <div className="nav-member best-time time bold-larger">
-                <p>Best Time: {best_time}</p>
+                {best_time ? <p>Best Time: {best_time}</p> : <p></p>}
             </div>
         </div>
     );
