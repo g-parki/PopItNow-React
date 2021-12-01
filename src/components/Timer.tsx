@@ -35,7 +35,7 @@ const Timer: React.FunctionComponent<TimerProps> = ({ initialTime, sendFinal }) 
             
             setCurrentTime(time)
             most_recent_time.current = time
-        }, 5);
+        }, 10);
         return () => {
             clearInterval(timer)
             sendFinal(most_recent_time.current)
