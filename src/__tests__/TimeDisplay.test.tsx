@@ -1,6 +1,6 @@
 import * as React from 'react';
-import TimeDisplay, { DisplayTime } from '../components/TimeDisplay';
 import { render, screen } from "@testing-library/react"
+import TimeDisplay, { DisplayTime } from '../components/TimeDisplay';
 
 describe("<TimeDisplay />", () => {
     it("should render a time with correct zero padding", () => {

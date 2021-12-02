@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface BubbleProps {
+export interface BubbleProps {
     value: boolean,
     row: number,
     col: number,
@@ -12,8 +12,26 @@ interface InteractionEvents {
     click: undefined | (() => void),
 }
 
-const PRESSED_LINK: string = "https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg"
-const UNPRESSED_LINK: string = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg"
+interface ImageData {
+    readonly src: string,
+    readonly alt: string,
+}
+
+interface Images {
+    readonly pressed: ImageData,
+    readonly unpressed: ImageData
+}
+
+const images: Images= {
+    pressed: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg",
+        alt: "blue button",
+    },
+    unpressed: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg",
+        alt: "white button",
+    }
+}
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress }) => {
 
@@ -27,11 +45,19 @@ const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress
         onpress(row, col)
     }
 
+    const getAlt = () => {
+        return value ? images.pressed.alt : images.unpressed.alt
+    }
+
+    const getSrc = () => {
+        return value ? images.pressed.src : images.unpressed.src
+    }
+
     const events = interaction_event()
 
     return (
         <div>
-            <img width="32" alt="Glass button blue" onMouseDown={events.click} onTouchStart={events.touch} src={value ? UNPRESSED_LINK : PRESSED_LINK}></img>
+            <img width="32" onMouseDown={events.click} onTouchStart={events.touch} alt={getAlt()} src={getSrc()}></img>
         </div>
     );
 }
