@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { uniqueId } from 'lodash'
 import { TimerContext } from './TimesManager'
 
-interface BubbleTableProps {
+export interface BubbleTableProps {
     requestGameEnd: () => void,
     requestGameStart: () => void,
 }

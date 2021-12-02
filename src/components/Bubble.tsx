@@ -23,12 +23,12 @@ interface Images {
 }
 
 const images: Images= {
-    pressed: {
-        src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg",
-        alt: "blue button",
-    },
     unpressed: {
         src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg",
+        alt: "blue button",
+    },
+    pressed: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg",
         alt: "white button",
     }
 }
@@ -46,11 +46,11 @@ const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress
     }
 
     const getAlt = () => {
-        return value ? images.pressed.alt : images.unpressed.alt
+        return value ? images.unpressed.alt : images.pressed.alt
     }
 
     const getSrc = () => {
-        return value ? images.pressed.src : images.unpressed.src
+        return value ? images.unpressed.src : images.pressed.src
     }
 
     const events = interaction_event()
