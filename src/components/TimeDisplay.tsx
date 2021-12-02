@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Time } from './TimesManager'
 
+export type DisplayTime = Pick<Time, "minutes" | "seconds" | "milliseconds">
+
 interface TimeDisplayProps {
-    time: Time,
+    time: DisplayTime,
     prefix?: string,
     classes?: string,
 }
