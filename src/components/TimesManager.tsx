@@ -54,7 +54,6 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
     const checkBestTime = (time: Time) => {
         if (bestTime === undefined || (time.duration < bestTime.duration)) {
             setBestTime(time)
-            console.log("best time was set")
         }
     }
 
