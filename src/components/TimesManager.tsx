@@ -45,8 +45,8 @@ const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
         } else {
             const most_recent_time = times[0]
             if (most_recent_time !== undefined) {
-                const timer_display_class = most_recent_time === bestTime ? "bold-larger green" : "bold-larger red"
-                return <span className={timer_display_class}><TimeDisplay time={most_recent_time}/></span>
+                const timer_display_class = (most_recent_time === bestTime) ? "bold-larger green" : "bold-larger red"
+                return <TimeDisplay time={most_recent_time} classes={timer_display_class} />
             }
         }
     }

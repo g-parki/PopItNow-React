@@ -42,7 +42,7 @@ const Timer: React.FunctionComponent<TimerProps> = ({ initialTime, sendFinal }) 
         };
       }, [initialTime, sendFinal]);
 
-    return (<span className="bold-larger"><TimeDisplay time={currentTime}/></span>);
+    return (<TimeDisplay time={currentTime} classes={'bold-larger'} />);
 }
  
 export default Timer;
