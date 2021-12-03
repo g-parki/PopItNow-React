@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import Bubble, { BubbleProps } from '../components/Bubble';
-import userEvent from '@testing-library/user-event';
 
 describe("<Bubble />", () => {
     
@@ -16,7 +15,7 @@ describe("<Bubble />", () => {
         render(<Bubble {...props} />)
         const bubble = screen.getByAltText("blue button")
 
-        userEvent.click(bubble)
+        fireEvent.mouseDown(bubble)
 
         expect(props.onpress).toHaveBeenCalled
     })
