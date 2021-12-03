@@ -9,22 +9,13 @@ interface TimesTableProps {
 
 const TimesTable: React.FunctionComponent<TimesTableProps> = ({ times }) => {
     const gaming = React.useContext(TimerContext)
-
-    const timeRow = (time: Time, span_class?: string) => {
-        if (span_class)
-            return (<td key={uniqueId()}><span className={span_class}><TimeDisplay time={time}/></span></td>)
-        else
-            return (<td key={uniqueId()}><TimeDisplay time={time}/></td>)
-    }
     
     const timeRows = () => {
         const rows: JSX.Element[] = []
 
         for (const [index, time] of times.entries()) {
-            if (index === 0 && !gaming)
-                rows.push(timeRow(time, "bold-larger green"))
-            else
-                rows.push(timeRow(time))
+            const classes = (index === 0 && !gaming) ? "bold-larger green" : undefined
+            rows.push(<td key={uniqueId()}><TimeDisplay time={time} classes={classes} /></td>)
         }
         return rows
     }
@@ -32,11 +23,10 @@ const TimesTable: React.FunctionComponent<TimesTableProps> = ({ times }) => {
     return (
         <table className= "centered">
             <tbody>
-            {timeRows().map((row) => <tr key={uniqueId()}>{row}</tr>)}
+            {timeRows().map((row) => <tr key={uniqueId()}> {row} </tr>)}
             </tbody>
         </table>
     )
-;
 }
  
 export default TimesTable;
