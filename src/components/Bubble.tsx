@@ -9,7 +9,7 @@ export interface BubbleProps {
 
 interface InteractionEvents {
     touch: undefined | (() => void),
-    click: undefined | (() => void),
+    mousedown: undefined | (() => void),
 }
 
 interface ImageData {
@@ -37,8 +37,8 @@ const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress
 
     const interaction_event = (): InteractionEvents => {
         if ('ontouchstart' in window)
-            return { touch: handlePress, click: undefined }
-        return { touch: undefined, click: handlePress }
+            return { touch: handlePress, mousedown: undefined }
+        return { touch: undefined, mousedown: handlePress }
     }
 
     const handlePress = () => {
@@ -57,7 +57,7 @@ const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress
 
     return (
         <div>
-            <img width="32" onMouseDown={events.click} onTouchStart={events.touch} alt={getAlt()} src={getSrc()}></img>
+            <img width="32" onMouseDown={events.mousedown} onTouchStart={events.touch} alt={getAlt()} src={getSrc()}></img>
         </div>
     );
 }
