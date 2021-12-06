@@ -1,15 +1,16 @@
-import * as React from 'react';
+// eslint-disable-next-line
+import * as React from 'react'
 
 export interface BubbleProps {
     value: boolean,
     row: number,
     col: number,
-    onpress: (arg1: number, arg2: number) => void,
+    onpress: (i: number, j: number) => void,
 }
 
 interface InteractionEvents {
     touch: undefined | (() => void),
-    click: undefined | (() => void),
+    mousedown: undefined | (() => void),
 }
 
 interface ImageData {
@@ -22,44 +23,38 @@ interface Images {
     readonly unpressed: ImageData
 }
 
-const images: Images= {
-    unpressed: {
-        src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg",
-        alt: "blue button",
-    },
-    pressed: {
-        src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg",
-        alt: "white button",
-    }
+const images: Images = {
+  unpressed: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg',
+    alt: 'blue button',
+  },
+  pressed: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Button_Icon_White.svg',
+    alt: 'white button',
+  },
 }
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress }) => {
+  const handlePress = () => {
+    onpress(row, col)
+  }
 
-    const interaction_event = (): InteractionEvents => {
-        if ('ontouchstart' in window)
-            return { touch: handlePress, click: undefined }
-        return { touch: undefined, click: handlePress }
-    }
+  const interactionEvent = (): InteractionEvents => {
+    if ('ontouchstart' in window) { return { touch: handlePress, mousedown: undefined } }
+    return { touch: undefined, mousedown: handlePress }
+  }
 
-    const handlePress = () => {
-        onpress(row, col)
-    }
+  const getAlt = () => (value ? images.unpressed.alt : images.pressed.alt)
 
-    const getAlt = () => {
-        return value ? images.unpressed.alt : images.pressed.alt
-    }
+  const getSrc = () => (value ? images.unpressed.src : images.pressed.src)
 
-    const getSrc = () => {
-        return value ? images.unpressed.src : images.pressed.src
-    }
+  const events = interactionEvent()
 
-    const events = interaction_event()
-
-    return (
-        <div>
-            <img width="32" onMouseDown={events.click} onTouchStart={events.touch} alt={getAlt()} src={getSrc()}></img>
-        </div>
-    );
+  return (
+    <div role="none" onMouseDown={events.mousedown} onTouchStart={events.touch}>
+      <img width="32" alt={getAlt()} src={getSrc()} />
+    </div>
+  )
 }
- 
-export default Bubble;
+
+export default Bubble
