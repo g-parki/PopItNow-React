@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import * as React from 'react'
 import SourceCodeLink from './SourceCodeLink'
 import { Time } from './TimesManager'

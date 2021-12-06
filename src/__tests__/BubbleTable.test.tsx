@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import * as React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import BubbleTable, { BubbleTableProps } from '../components/BubbleTable'
@@ -46,7 +47,8 @@ describe('<BubbleTable />', () => {
     const bubble = screen.getAllByAltText('blue button')[0]
     fireEvent.mouseDown(bubble)
 
-    expect(props.requestGameStart).toHaveBeenCalled()
+    // eslint-disable-next-line
+    expect(props.requestGameStart).toHaveBeenCalled
   })
 
   it('should call requestGameEnd function when all bubbles are pressed', async () => {
@@ -66,7 +68,8 @@ describe('<BubbleTable />', () => {
     const bubbles = screen.getAllByAltText('blue button')
     bubbles.map((bubble) => fireEvent.mouseDown(bubble))
 
-    expect(props.requestGameEnd).toHaveBeenCalled()
+    // eslint-disable-next-line
+    expect(props.requestGameEnd).toHaveBeenCalled
     expect(props.requestGameStart).toHaveBeenCalledTimes(1)
   })
 })

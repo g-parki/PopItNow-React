@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import * as React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import TimeDisplay from './TimeDisplay'

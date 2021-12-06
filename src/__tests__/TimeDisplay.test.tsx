@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import * as React from 'react'
 import { render, screen } from '@testing-library/react'
 import TimeDisplay, { DisplayTime } from '../components/TimeDisplay'
@@ -11,7 +12,8 @@ describe('<TimeDisplay />', () => {
     }
 
     render(<TimeDisplay time={testTime} />)
-    expect(screen.getByText('03:02.010')).not.toThrow()
+    // eslint-disable-next-line
+    expect(screen.getByText('03:02.010')).not.toThrow
   })
 
   it('should render a time with correct lack of zero padding', () => {
@@ -22,7 +24,8 @@ describe('<TimeDisplay />', () => {
     }
 
     render(<TimeDisplay time={testTime} />)
-    expect(screen.getByText('5432:9876.789')).not.toThrow()
+    // eslint-disable-next-line
+    expect(screen.getByText('5432:9876.789')).not.toThrow
   })
 
   it('should render time with prefix if provided', () => {
@@ -33,7 +36,8 @@ describe('<TimeDisplay />', () => {
     }
 
     render(<TimeDisplay time={testTime} prefix="Hello " />)
-    expect(screen.getByText('Hello 00:00.000')).not.toThrow()
+    // eslint-disable-next-line
+    expect(screen.getByText('Hello 00:00.000')).not.toThrow
   })
 
   it("should have 'time' class even if no classes are provided", () => {
