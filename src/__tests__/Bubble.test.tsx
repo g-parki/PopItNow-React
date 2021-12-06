@@ -1,23 +1,24 @@
-import * as React from 'react';
-import { fireEvent, render, screen } from "@testing-library/react"
-import Bubble, { BubbleProps } from '../components/Bubble';
+import * as React from 'react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import Bubble, { BubbleProps } from '../components/Bubble'
 
-describe("<Bubble />", () => {
-    
-    it("should call onpress function when clicked/pressed", () => {
-        const props: BubbleProps = {
-            value: true,
-            row: 0,
-            col: 0,
-            onpress: (x: number, y: number) => {}
-        }
+describe('<Bubble />', () => {
+  it('should call onpress function when clicked/pressed', () => {
+    const props: BubbleProps = {
+      value: true,
+      row: 0,
+      col: 0,
+      // eslint-disable-next-line no-unused-vars
+      onpress: (x: number, y: number) => {},
+    }
 
-        render(<Bubble {...props} />)
-        const bubble = screen.getByAltText("blue button")
+    const { value, row, col, onpress } = props
 
-        fireEvent.mouseDown(bubble)
+    render(<Bubble value={value} row={row} col={col} onpress={onpress} />)
+    const bubble = screen.getByAltText('blue button')
 
-        expect(props.onpress).toHaveBeenCalled
-    })
+    fireEvent.mouseDown(bubble)
 
+    expect(onpress).toHaveBeenCalled()
+  })
 })

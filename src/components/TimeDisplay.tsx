@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 import { Time } from './TimesManager'
 
-export type DisplayTime = Pick<Time, "minutes" | "seconds" | "milliseconds">
+export type DisplayTime = Pick<Time, 'minutes' | 'seconds' | 'milliseconds'>
 
 interface TimeDisplayProps {
     time: DisplayTime,
@@ -16,23 +16,36 @@ interface StringTime {
 }
 
 const zeroPad = (value: number, digits: number): string => {
-    const string_val = value.toString()
-    let padded = string_val
-    while (padded.length < digits) {
-        padded = "0" + padded
-    }
-    return padded
-}
-  
-const TimeDisplay: React.FunctionComponent<TimeDisplayProps> = ({ time, prefix, classes}) => {
-    
-    const string_time: StringTime = {
-        minutes: zeroPad(time.minutes, 2),
-        seconds: zeroPad(time.seconds, 2),
-        milliseconds: zeroPad(time.milliseconds, 3),
-    }
-
-    return (<p className={classes ? classes + " time" : "time"}>{prefix}{string_time.minutes}:{string_time.seconds}.{string_time.milliseconds}</p>);
+  const stringVal = value.toString()
+  let padded = stringVal
+  while (padded.length < digits) {
+    padded = `0${padded}`
+  }
+  return padded
 }
 
-export default TimeDisplay;
+const TimeDisplay: React.FunctionComponent<TimeDisplayProps> = ({ time, prefix, classes }) => {
+  const stringTime: StringTime = {
+    minutes: zeroPad(time.minutes, 2),
+    seconds: zeroPad(time.seconds, 2),
+    milliseconds: zeroPad(time.milliseconds, 3),
+  }
+
+  return (
+    <p className={classes ? `${classes} time` : 'time'}>
+      {prefix}
+      {stringTime.minutes}
+      :
+      {stringTime.seconds}
+      .
+      {stringTime.milliseconds}
+    </p>
+  )
+}
+
+TimeDisplay.defaultProps = {
+  prefix: undefined,
+  classes: undefined,
+}
+
+export default TimeDisplay
