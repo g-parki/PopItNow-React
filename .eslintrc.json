@@ -35,14 +35,9 @@
             "tsx": "never"
           }
        ],
-       "@typescript-eslint/no-unused-vars": [
-        2,
-        {
-            "args": "none"
-        }
-      ],
-      "object-curly-newline": ["error", { "multiline": true }],
-      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+       "no-unused-vars": "off",
+       "object-curly-newline": ["error", { "multiline": true }],
+       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
     },
     "settings": {
       "import/resolver": {

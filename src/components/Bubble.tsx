@@ -5,7 +5,7 @@ export interface BubbleProps {
     value: boolean,
     row: number,
     col: number,
-    onpress: (i: number, j: number) => void,
+    onPress: (i: number, j: number) => void,
 }
 
 interface InteractionEvents {
@@ -34,9 +34,9 @@ const images: Images = {
   },
 }
 
-const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onpress }) => {
+const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
   const handlePress = () => {
-    onpress(row, col)
+    onPress(row, col)
   }
 
   const interactionEvent = (): InteractionEvents => {

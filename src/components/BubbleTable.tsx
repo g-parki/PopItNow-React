@@ -60,7 +60,7 @@ const BubbleTable: React.FunctionComponent<BubbleTableProps> = ({ requestGameEnd
           <tr key={uniqueId()}>
             {row.map((val, j) => (
               <td key={uniqueId()}>
-                <Bubble value={val} row={i} col={j} onpress={doToggle} />
+                <Bubble value={val} row={i} col={j} onPress={doToggle} />
               </td>
             ))}
           </tr>

@@ -9,18 +9,17 @@ describe('<Bubble />', () => {
       value: true,
       row: 0,
       col: 0,
-      // eslint-disable-next-line no-unused-vars
-      onpress: (x: number, y: number) => {},
+      onPress: (x: number, y: number) => {},
     }
 
-    const { value, row, col, onpress } = props
+    const { value, row, col, onPress } = props
 
-    render(<Bubble value={value} row={row} col={col} onpress={onpress} />)
+    render(<Bubble value={value} row={row} col={col} onPress={onPress} />)
     const bubble = screen.getByAltText('blue button')
 
     fireEvent.mouseDown(bubble)
 
     // eslint-disable-next-line
-    expect(onpress).toHaveBeenCalled
+    expect(onPress).toHaveBeenCalled
   })
 })
