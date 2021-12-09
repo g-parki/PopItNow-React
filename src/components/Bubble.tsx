@@ -23,6 +23,8 @@ interface Images {
     readonly unpressed: ImageData
 }
 
+const honker = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
+
 const images: Images = {
   unpressed: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Button_Icon_Blue.svg',
@@ -36,6 +38,7 @@ const images: Images = {
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
   const handlePress = () => {
+    honker.play()
     onPress(row, col)
   }
 
