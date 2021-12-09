@@ -23,7 +23,7 @@ interface Images {
     readonly unpressed: ImageData
 }
 
-const honker = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
+// const honker = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
 
 const images: Images = {
   unpressed: {
@@ -37,6 +37,8 @@ const images: Images = {
 }
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
+  const honker = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
+
   const handlePress = () => {
     honker.play()
     onPress(row, col)
