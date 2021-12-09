@@ -35,7 +35,10 @@ const images: Images = {
 }
 
 const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
+  const honker: HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
+
   const handlePress = () => {
+    honker.play()
     onPress(row, col)
   }
 
