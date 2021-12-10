@@ -34,11 +34,35 @@ const images: Images = {
   },
 }
 
-const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
-  const honker: HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/honk.mp3`)
+const maximumHonkingLevel = 4
 
+class HonkMother {
+  maxHonkers: number
+
+  currentHonker: number
+
+  honkers: Array<HTMLAudioElement>
+
+  constructor(maximumHonking: number) {
+    this.maxHonkers = maximumHonking
+    this.honkers = []
+    this.currentHonker = 0
+    for (let i = 0; i < maximumHonking; i++) {
+      this.honkers.push(new Audio(`${process.env.PUBLIC_URL}/honk.mp3`))
+    }
+  }
+
+  honkMe(): void {
+    this.honkers[this.currentHonker % this.maxHonkers].play()
+    this.currentHonker += 1
+  }
+}
+
+const HonkTimeFunZone: HonkMother = new HonkMother(maximumHonkingLevel)
+
+const Bubble: React.FunctionComponent<BubbleProps> = ({ value, row, col, onPress }) => {
   const handlePress = () => {
-    honker.play()
+    HonkTimeFunZone.honkMe()
     onPress(row, col)
   }
 
