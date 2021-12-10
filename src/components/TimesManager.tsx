@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import Timer from './Timer'
 import BubbleTable from './BubbleTable'
 import BottomNav from './BottomNav'
@@ -17,7 +17,7 @@ export interface Time {
     duration: number,
 }
 
-export const TimerContext = React.createContext(false)
+export const TimerContext = createContext(false)
 
 const TimesManager: React.FunctionComponent<TimesManagerProps> = () => {
   const [times, setTimes] = useState<Time[]>([])

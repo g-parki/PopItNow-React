@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { uniqueId } from 'lodash'
 import Bubble from './Bubble'
 import { TimerContext } from './TimesManager'
@@ -35,7 +35,7 @@ const initialGrid: boolean[][] = createInitialGrid(ROWS, COLUMNS)
 
 const BubbleTable: React.FunctionComponent<BubbleTableProps> = ({ requestGameEnd, requestGameStart }) => {
   const [Grid, setGrid] = useState<boolean[][]>(copyGrid(initialGrid))
-  const gaming = React.useContext(TimerContext)
+  const gaming = useContext(TimerContext)
 
   const gridIsClear = (grid: boolean[][]): boolean => grid.every((row) => row.every((el) => !el))
 
